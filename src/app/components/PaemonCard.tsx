@@ -1,4 +1,5 @@
 'use client'
+import Image from 'next/image'
 
 interface Move {
   name: string;
@@ -57,10 +58,13 @@ export default function PaemonCard({
       {/* Image Section */}
       <div className="bg-[#7BA1A8] p-4">
         <div className="relative w-full h-64 border-4 border-[#5A8087] rounded-lg overflow-hidden shadow-lg">
-          <img
+          <Image
             src={imageUrl}
             alt={name}
+            width={256}
+            height={256}
             className="object-contain w-full h-full pixelated"
+            unoptimized={imageUrl.includes('oaidalleapicontent')}
           />
         </div>
       </div>

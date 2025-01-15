@@ -33,8 +33,8 @@ export default function PaemonInfo({
         <div className="bg-[#5A8087] p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow">
           <h4 className="font-bold text-white mb-2 text-shadow">Special Abilities</h4>
           <ul className="list-disc list-inside space-y-1">
-            {specialAbilities.map((ability, index) => (
-              <li key={index} className="text-white/90">{ability}</li>
+            {specialAbilities.map((ability) => (
+              <li key={ability} className="text-white/90">{ability}</li>
             ))}
           </ul>
         </div>
