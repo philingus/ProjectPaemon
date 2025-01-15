@@ -73,39 +73,25 @@ Our team drew strength from overcoming personal challenges and aimed to create a
 
 ---
 
-## 📂 Directory Structure
-
-```plaintext
-ProjectPaemon/
-├── README.md
-├── src/
-│   ├── app/
-│   │   ├── components/
-│   │   │   ├── PaemonCard.tsx
-│   │   │   ├── PaemonInfo.tsx
-│   │   │   └── AudioPlayer.tsx
-│   │   ├── generate/
-│   │   ├── questionnaire/
-│   │   └── trainer-name/
-│   └── public/
-├── styles/
-│   └── globals.css
-
 **Tracks:**
-- **Best AI Music App (Beatoven.ai):** $500 credits for creating a cool music and AI experience 🎵  
-- **Exploratory Use of LLMs and Vision Models (Nebius):** 🏆 1st Place! $2000 Nebius credits to explore the cutting edge of AI 🚀  
-- **Best Personal Project (CodeBuff):** $650 USD for the most creative personal project ✨  
-- **Statsig Grand Prize:** 🥇 $1625 CASH for Best Overall Project  
-- **Magic Loops - Generative UI/UX Track:** $325 CASH for the best use of LLMs to create dynamic user interfaces 🎨  
-- **Nethenoob Spinning Cat:** $65 CASH for incorporating fun elements like the spinning cat 🐾  
-- **Beginner Track Winners:** Opennote education credits for teams with beginners (20 winners) 🎓  
-- **Most Technically Impressive (Modal):** $2000 credits for a technically impressive project 💻
+- **Best AI Music App (Beatoven.ai):**   
+- **Exploratory Use of LLMs and Vision Models (Nebius):**   
+- **Best Personal Project (CodeBuff):**   
+- **Statsig Grand Prize:** 
+- **Magic Loops - Generative UI/UX Track:**   
+- **Nethenoob Spinning Cat:**   
+- **Beginner Track Winners:**   
+- **Most Technically Impressive (Modal):** 
+
+---
 
 ##🚀 Future Plans
 - Adding multiplayer features so Pæmons can interact with each other.
 - Expanding the questionnaire for even more nuanced personalities.
 - Creating a gallery where users can display their Pæmons.
 - Building a mobile app for an on-the-go experience.
+
+---
 
 ##💡 How to Run Locally
 
@@ -115,3 +101,6 @@ ProjectPaemon/
 - 4. Open in your browser at: http://localhost:3000
 
 ## 🎉 Ready to discover your Pæmon? Let the adventure begin! 🌟
+
+---
+
