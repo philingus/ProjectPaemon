@@ -8,10 +8,10 @@
 
 Welcome to **Project Pæmon**, a Pokémon-inspired experience that curates a unique companion—your very own Pæmon! This project is a collaborative labor of love by four developers from around the world:
 
-- **Phil** 🖥️ [LinkedIn](#)
-- **Sama** 💡 [LinkedIn](#)
-- **Hannah** 🎨 [LinkedIn](#)
-- **Chan** 🛠️ [LinkedIn](#)
+- **Phil** 🖥️ [https://www.linkedin.com/in/philhocombatir/](#)
+- **Sama** 💡 [https://www.linkedin.com/in/noorul-sama-sahel-975586246/](#)
+- **Hannah** 🎨 [https://www.linkedin.com/in/hannaherauch/ ](#)
+- **Chan** 🛠️ [https://www.linkedin.com/in/chan-dinh/](#)
 
 Despite different time zones, backgrounds, and skill sets, we came together to create a playful, AI-powered project that celebrates individuality. **Project Pæmon** takes your unique qualities and username, analyzes them through an engaging questionnaire, and generates a one-of-a-kind Pæmon just for you.
 
