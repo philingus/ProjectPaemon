@@ -59,12 +59,18 @@ export default function PaemonCard({
       <div className="bg-[#7BA1A8] p-4">
         <div className="relative w-full h-64 border-4 border-[#5A8087] rounded-lg overflow-hidden shadow-lg">
           <Image
-            src={imageUrl}
+            src={imageUrl || '/uia-unscreen.gif'}
             alt={name}
             width={256}
             height={256}
             className="object-contain w-full h-full pixelated"
-            unoptimized={imageUrl.includes('oaidalleapicontent')}
+            unoptimized={imageUrl?.includes('oaidalleapicontent') || imageUrl?.includes('oaidalleapiprodscus') || !imageUrl}
+            onError={(e) => {
+              const img = e.target as HTMLImageElement;
+              if (img.src !== '/uia-unscreen.gif') {
+                img.src = '/uia-unscreen.gif';
+              }
+            }}
           />
         </div>
       </div>

@@ -220,8 +220,18 @@ export default function GeneratePage() {
         
         // Generate image
         const enhancedPrompt = `A highly detailed pixel art Pokemon in GameBoy Advance style. ${details.flavorText}. Create a sharp, clear sprite with rich colors and fine details, maintaining the classic pixel art aesthetic while maximizing detail within the 256x256 resolution. Include subtle shading and highlights to enhance depth.`
-        const imageUrl = await generateImageWithTimeout(enhancedPrompt)
-        setImageUrl(imageUrl)
+        let generatedImageUrl = '';
+        try {
+          generatedImageUrl = await generateImageWithTimeout(enhancedPrompt);
+          if (!generatedImageUrl) {
+            throw new Error('No image URL received from generation');
+          }
+          console.log('Successfully generated image:', generatedImageUrl);
+        } catch (imageError) {
+          console.error('Image generation failed:', imageError);
+          generatedImageUrl = '/default-paemon.png';
+        }
+        setImageUrl(generatedImageUrl);
         
       } catch (err) {
         console.error('Generation error:', err)

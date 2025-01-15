@@ -35,6 +35,17 @@
 - Use proper key props in list iterations (avoid using array index)
 - Keep dependencies up to date with `npm install`
 
+## Image Handling
+- Always provide fallback images for AI-generated content
+- Use default-paemon.png as fallback for failed image loads
+- Set unoptimized prop for external AI-generated images
+- Log image generation failures for debugging
+- Handle both generation and loading failures gracefully
+- Add onError handlers to Image components for runtime failures
+- OpenAI DALL-E image domains to allow in next.config.ts:
+  - oaidalleapicontent.blob.core.windows.net
+  - oaidalleapiprodscus.blob.core.windows.net
+
 ## AI Implementation
 - Uses OpenAI's DALL-E model for image generation
 - Prompts are enhanced to specify GameBoy style and color palette
