@@ -1,0 +1,137 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --gba-purple: #332640;
+  --gba-purple-light: #4A3B55;
+  --gba-screen: #7BA1A8;
+  --gba-screen-dark: #5A8087;
+  --gba-accent: #E0757C;
+  --gba-button: #2D1B2E;
+}
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  image-rendering: pixelated;
+  @apply min-h-screen;
+}
+
+.background-animation {
+  @apply fixed inset-0 z-0;
+  background: url('/mnslf2y8hxab1 (1).gif') center center fixed;
+  background-size: cover;
+  opacity: 0.3;
+}
+
+@layer components {
+  .gba-container {
+    @apply bg-[#332640] p-6 rounded-2xl shadow-xl border-2 border-[#4A3B55]
+    transition-all duration-300 hover:shadow-2xl
+    backdrop-filter backdrop-blur-sm bg-opacity-90;
+  }
+  
+  .gba-screen {
+    @apply bg-[#7BA1A8] p-8 rounded-xl border-4 border-[#5A8087] 
+    shadow-lg transition-all duration-300
+    backdrop-filter backdrop-blur-sm bg-opacity-90
+    hover:shadow-2xl
+    w-full max-w-[95vw] mx-auto;
+  }
+  
+  .gba-button {
+    @apply px-8 py-4 bg-[#2D1B2E] text-[#E0757C] rounded-xl 
+    hover:bg-[#4A3B55] transition-all duration-200
+    active:transform active:scale-95 font-bold
+    border-2 border-[#E0757C] 
+    shadow-lg hover:shadow-xl
+    hover:-translate-y-0.5
+    focus:ring-2 focus:ring-[#E0757C] focus:ring-opacity-50
+    whitespace-normal break-words
+    min-w-[280px];
+  }
+
+  .gba-input {
+    @apply bg-[#5A8087] text-white rounded-xl p-2 
+    border-2 border-[#7BA1A8] focus:outline-none 
+    focus:border-[#E0757C] transition-all duration-200
+    hover:border-[#E0757C] focus:ring-2 focus:ring-[#E0757C]
+    focus:ring-opacity-50
+    shadow-md hover:shadow-lg;
+  }
+
+  .spinning-cat {
+    @apply relative w-48 h-48 mx-auto;
+    filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.7));
+  }
+
+  .text-shadow {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  }
+
+  .logo-shadow {
+    filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.7));
+  }
+
+  .card-shadow {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 
+                0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  }
+
+  .scrollable-card {
+    @apply max-h-[80vh] overflow-y-auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--gba-accent) var(--gba-screen-dark);
+  }
+
+  /* Magic Loops inspired animations */
+  .fade-in {
+    @apply opacity-0 animate-[fadeIn_0.5s_ease-in_forwards];
+  }
+
+  .slide-up {
+    @apply translate-y-4 opacity-0 animate-[slideUp_0.5s_ease-out_forwards];
+  }
+
+  .bounce-in {
+    @apply scale-95 opacity-0 animate-[bounceIn_0.5s_cubic-bezier(0.8,0,0.2,1)_forwards];
+  }
+
+  /* Card-specific styles */
+  .pixelated {
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(1rem);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
