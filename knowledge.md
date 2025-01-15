@@ -42,6 +42,34 @@
 - Log image generation failures for debugging
 - Handle both generation and loading failures gracefully
 - Add onError handlers to Image components for runtime failures
+- For html2canvas image capture:
+  - Use regular img tags instead of Next.js Image component
+  - Set crossOrigin="anonymous" on images
+  - Configure html2canvas with useCORS and allowTaint
+  - Set imageTimeout: 0 to prevent timeouts
+  - Use onclone to ensure crossOrigin in cloned document
+- AI Image Generation:
+  - Initialize image state as null to properly handle loading states
+  - Only set image URL after successful generation
+  - Log all image loading errors for debugging
+  - Show loading state while image is being generated
+  - Provide clear error messages when generation fails
+  - Handle CORS issues with OpenAI-generated images
+  - Use document.createElement('img') instead of new Image() for TypeScript compatibility
+  - Preload images before setting state to ensure valid URLs
+  - Set explicit width/height on image elements
+  - Use separate loading states for generation and image loading
+  - Validate OpenAI image URLs before attempting to load them
+  - Use AbortController for timeouts instead of Promise.race
+  - Force image remount by using key prop when URL changes
+  - Provide clear fallback paths for each potential failure point
+  - Keep image loading logic simple and avoid complex Promise chains
+  - Use transition classes for smooth loading states
+  - Handle both generation and loading errors separately
+  - Log specific error types for better debugging
+  - Prefer simple fallbacks over complex error recovery
+  - Keep image display logic straightforward with clear loading states
+  - Use max-width/max-height with object-contain for proper image scaling
 - OpenAI DALL-E image domains to allow in next.config.ts:
   - oaidalleapicontent.blob.core.windows.net
   - oaidalleapiprodscus.blob.core.windows.net
@@ -206,3 +234,10 @@ Required environment variables:
 - Professor Nosu chatbot integration pending proper configuration
 - Will be re-implemented once type issues are resolved
 - Consider using a different chatbot library or custom implementation
+
+## Audio Implementation
+- Background music starts automatically on page load
+- Uses autoPlay attribute and programmatic play() call for maximum compatibility
+- Note: Browser autoplay policies may block automatic playback until user interacts with the page
+- Initial volume set to 50% for better user experience
+- Audio player shows in bottom-right corner with prominent play/pause controls

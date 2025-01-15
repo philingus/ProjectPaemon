@@ -16,7 +16,7 @@ const nextConfig = {
         pathname: '/**',
       }
     ],
-    unoptimized: false,
+    unoptimized: true, // Disable image optimization for better CORS handling
   },
 };
 

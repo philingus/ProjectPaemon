@@ -58,20 +58,25 @@ export default function PaemonCard({
       {/* Image Section */}
       <div className="bg-[#7BA1A8] p-4">
         <div className="relative w-full h-64 border-4 border-[#5A8087] rounded-lg overflow-hidden shadow-lg">
-          <Image
-            src={imageUrl || '/uia-unscreen.gif'}
-            alt={name}
-            width={256}
-            height={256}
-            className="object-contain w-full h-full pixelated"
-            unoptimized={imageUrl?.includes('oaidalleapicontent') || imageUrl?.includes('oaidalleapiprodscus') || !imageUrl}
-            onError={(e) => {
-              const img = e.target as HTMLImageElement;
-              if (img.src !== '/uia-unscreen.gif') {
-                img.src = '/uia-unscreen.gif';
-              }
-            }}
-          />
+          <div className="relative w-full h-64 flex items-center justify-center">
+            {imageUrl ? (
+              <img
+                src={imageUrl}
+                alt={name}
+                className="max-w-full max-h-full object-contain pixelated"
+                onError={(e) => {
+                  const img = e.target as HTMLImageElement;
+                  img.src = '/default-paemon.png';
+                }}
+              />
+            ) : (
+              <img
+                src="/uia-unscreen.gif"
+                alt="Loading..."
+                className="w-32 h-32 object-contain pixelated animate-pulse"
+              />
+            )}
+          </div>
         </div>
       </div>
 

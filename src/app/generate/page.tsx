@@ -1,10 +1,12 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { OpenAI } from 'openai'
 import Image from 'next/image'
 import PaemonCard from '../components/PaemonCard'
 import PaemonInfo from '../components/PaemonInfo'
+import DeveloperInfo from '../components/DeveloperInfo'
+
 
 const openai = new OpenAI({
   apiKey: process.env.NEXT_PUBLIC_OPENAI_API_KEY,
@@ -155,44 +157,35 @@ const generatePaemonDetailsWithTimeout = async (
 /**
  * Generates image with timeout
  */
-const generateImageWithTimeout = async (
-  prompt: string,
-  timeout: number = 15000
-): Promise<string> => {
-  const timeoutPromise = new Promise<string>((_, reject) => {
-    setTimeout(() => reject(new Error('Image generation timed out')), timeout);
-  });
-
+const generateImageWithTimeout = async (prompt: string): Promise<string> => {
   try {
-    const imagePromise = openai.images.generate({
+    const response = await openai.images.generate({
       prompt,
       n: 1,
       size: "256x256",
       response_format: "url",
-    }).then(response => response.data[0]?.url || '');
+    });
 
-    const result = await Promise.race([
-      imagePromise,
-      timeoutPromise
-    ]);
-
-    if (!result) {
+    const imageUrl = response.data[0]?.url;
+    if (!imageUrl) {
       throw new Error('No image URL received');
     }
 
-    return result;
+    return imageUrl;
   } catch (error) {
     console.error('Image generation failed:', error);
-    throw error;
+    return '/default-paemon.png';
   }
 };
 
 export default function GeneratePage() {
   const [loading, setLoading] = useState(true)
-  const [imageUrl, setImageUrl] = useState('')
+  const [imageUrl, setImageUrl] = useState<string | null>(null)
   const [error, setError] = useState('')
   const [paemonDetails, setPaemonDetails] = useState<PaemonDetails | null>(null)
   const [isGenerating, setIsGenerating] = useState(false)
+  const [isImageLoading, setIsImageLoading] = useState(false)
+  const cardRef = useRef<HTMLDivElement>(null!)
 
   useEffect(() => {
     const generatePaemon = async () => {
@@ -219,19 +212,25 @@ export default function GeneratePage() {
         setPaemonDetails(details)
         
         // Generate image
-        const enhancedPrompt = `A highly detailed pixel art Pokemon in GameBoy Advance style. ${details.flavorText}. Create a sharp, clear sprite with rich colors and fine details, maintaining the classic pixel art aesthetic while maximizing detail within the 256x256 resolution. Include subtle shading and highlights to enhance depth.`
-        let generatedImageUrl = '';
+        setIsImageLoading(true);
         try {
-          generatedImageUrl = await generateImageWithTimeout(enhancedPrompt);
-          if (!generatedImageUrl) {
-            throw new Error('No image URL received from generation');
+          const enhancedPrompt = `A highly detailed pixel art Pokemon in GameBoy Advance style. ${details.flavorText}. Create a sharp, clear sprite with rich colors and fine details, maintaining the classic pixel art aesthetic while maximizing detail within the 256x256 resolution. Include subtle shading and highlights to enhance depth.`;
+          
+          const generatedImageUrl = await generateImageWithTimeout(enhancedPrompt);
+          console.log('Generated image URL:', generatedImageUrl);
+          
+          if (!generatedImageUrl || generatedImageUrl === '/default-paemon.png') {
+            throw new Error('Failed to generate image');
           }
-          console.log('Successfully generated image:', generatedImageUrl);
+          
+          setImageUrl(generatedImageUrl);
         } catch (imageError) {
-          console.error('Image generation failed:', imageError);
-          generatedImageUrl = '/default-paemon.png';
+          console.error('Image generation error:', imageError);
+          setError('Failed to generate Paemon image. Using default image.');
+          setImageUrl('/default-paemon.png');
+        } finally {
+          setIsImageLoading(false);
         }
-        setImageUrl(generatedImageUrl);
         
       } catch (err) {
         console.error('Generation error:', err)
@@ -309,18 +308,20 @@ export default function GeneratePage() {
           </div>
         )}
         
-        <PaemonCard
-          name={paemonDetails.name}
-          hp={paemonDetails.hp}
-          attack={paemonDetails.attack}
-          defense={paemonDetails.defense}
-          speed={paemonDetails.speed}
-          type={paemonDetails.type}
-          moves={paemonDetails.moves}
-          weakness={paemonDetails.weakness}
-          flavorText={paemonDetails.flavorText}
-          imageUrl={imageUrl || '/uia-unscreen.gif'}
-        />
+        <div>
+          <PaemonCard
+            name={paemonDetails.name}
+            hp={paemonDetails.hp}
+            attack={paemonDetails.attack}
+            defense={paemonDetails.defense}
+            speed={paemonDetails.speed}
+            type={paemonDetails.type}
+            moves={paemonDetails.moves}
+            weakness={paemonDetails.weakness}
+            flavorText={paemonDetails.flavorText}
+            imageUrl={imageUrl || '/uia-unscreen.gif'}
+          />
+        </div>
         
         <PaemonInfo
           name={paemonDetails.name}
@@ -328,6 +329,8 @@ export default function GeneratePage() {
           personality={paemonDetails.personality}
           specialAbilities={paemonDetails.specialAbilities}
         />
+        
+        <DeveloperInfo />
       </div>
     </div>
   )
