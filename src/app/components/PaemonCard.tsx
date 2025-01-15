@@ -85,7 +85,7 @@ export default function PaemonCard({
       <div className="bg-[#7BA1A8] p-4 border-t-2 border-[#5A8087]">
         <h3 className="text-[#2D1B2E] font-bold mb-2 text-shadow">Moves:</h3>
         <div className="space-y-3">
-          {moves.map((move, index) => (
+          {moves.map((move) => (
             <div 
               key={move.name}
               className="bg-[#5A8087] p-3 rounded-lg shadow-md hover:shadow-lg transition-shadow"

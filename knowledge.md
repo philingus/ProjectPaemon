@@ -28,6 +28,13 @@
 - openai: OpenAI API client
 - TailwindCSS: Styling
 
+## Vercel Deployment Requirements
+- Use Next.js Image component with proper width/height props
+- Add remotePatterns to next.config.ts for external image domains
+- Use 'use client' directive in client components
+- Use proper key props in list iterations (avoid using array index)
+- Keep dependencies up to date with `npm install`
+
 ## AI Implementation
 - Uses OpenAI's DALL-E model for image generation
 - Prompts are enhanced to specify GameBoy style and color palette
