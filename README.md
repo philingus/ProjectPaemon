@@ -85,7 +85,7 @@ Our team drew strength from overcoming personal challenges and aimed to create a
 
 ---
 
-##🚀 Future Plans
+## 🚀 Future Plans
 - Adding multiplayer features so Pæmons can interact with each other.
 - Expanding the questionnaire for even more nuanced personalities.
 - Creating a gallery where users can display their Pæmons.
@@ -93,7 +93,7 @@ Our team drew strength from overcoming personal challenges and aimed to create a
 
 ---
 
-##💡 How to Run Locally
+## 💡 How to Run Locally
 
 - 1. Clone the repository: git clone https://github.com/philingus/ProjectPaemon.git
 - 2. Install dependencies: npm install
