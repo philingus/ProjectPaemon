@@ -56,15 +56,6 @@ Our team drew strength from overcoming personal challenges and aimed to create a
 
 ---
 
-## 🌟 Accomplishments We’re Proud Of
-
-- Winning **1st Place** for Exploratory Use of LLMs and Vision Models with Nebius AI Studio.
-- Creating a cohesive project despite working across different time zones.
-- Integrating unique AI-generated visuals, descriptions, and music into a seamless experience.
-- Designing a fun and engaging questionnaire that users genuinely enjoy.
-
----
-
 ## 🎯 Challenges We Overcame
 
 - **Remote Collaboration:** Coordinating across time zones required thoughtful planning and asynchronous communication.
