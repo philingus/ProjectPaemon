@@ -1,97 +1,36 @@
 # 🌟 Project Pæmon 🌟
+🧩 Nosu Hackathon Submission | 🏆 1st Place Winner (1,400+ Participants)
 
-### 🧩 Nosu Hackathon Submission
+## 📖 About Project Pæmon
+Project Pæmon is a full-stack, Pokémon-inspired AI experience that curates a unique digital companion — your very own Pæmon!
 
----
+What started as a passion project became a globally recognized hackathon winner, built by four developers across time zones.
 
-## 🌈 About Project Pæmon
+## 👨‍💻 Team
+- Phil Combatir – [LinkedIn](https://www.linkedin.com/in/philhocombatir/)
+- Sama – [LinkedIn](https://www.linkedin.com/in/noorul-sama-sahel-975586246/)
+- Hannah – [LinkedIn](https://www.linkedin.com/in/hannaherauch/)
+- Chan – [LinkedIn](https://www.linkedin.com/in/chan-dinh/)
 
-Welcome to **Project Pæmon**, a Pokémon-inspired experience that curates a unique companion—your very own Pæmon! This project is a collaborative labor of love by four developers from around the world:
+## 🧠 Features
+- Personality quiz to generate your Pæmon’s name, type, backstory, and stats
+- GPT-powered narrative generation
+- Stable Diffusion pixel art rendering
+- Beatoven AI-generated music
+- Screenshot and share options
 
-- **Phil** 🖥️ [https://www.linkedin.com/in/philhocombatir/](#)
-- **Sama** 💡 [https://www.linkedin.com/in/noorul-sama-sahel-975586246/](#)
-- **Hannah** 🎨 [https://www.linkedin.com/in/hannaherauch/ ](#)
-- **Chan** 🛠️ [https://www.linkedin.com/in/chan-dinh/](#)
+## 🛠️ Tech Stack (Full Stack)
+- **Frontend:** Next.js + TailwindCSS
+- **Backend:** Flask + Firebase
+- **AI:** OpenAI (GPT-3.5), Stable Diffusion
+- **Deployment:** Vercel
 
-Despite different time zones, backgrounds, and skill sets, we came together to create a playful, AI-powered project that celebrates individuality. **Project Pæmon** takes your unique qualities and username, analyzes them through an engaging questionnaire, and generates a one-of-a-kind Pæmon just for you.
-
----
-
-## 🎮 Key Features
-
-- **Personalized Pæmon Generation:** Your answers shape the name, type, stats, and backstory of your Pæmon.
-- **AI-Powered Descriptions:** OpenAI (GPT-3.5) creates unique backstories, flavor texts, and abilities for your Pæmon.
-- **Custom Pixel Art:** Stable Diffusion generates GameBoy Advance-style pixel sprites.
-- **Dynamic Background Music:** Beatoven.ai composes a chill, nostalgic soundtrack, enhanced with MagicLoops.
-- **Screenshot Option:** Save your unique Pæmon card as an image to share with your friends!
-
----
-
-## 🎨 What Inspired Us
-
-Growing up, we were enchanted by Pokémon games and the idea of having a unique companion that reflected who we are. **Project Pæmon** isn't just a game; it's about celebrating individuality and bringing joy through creativity and nostalgia.
-
-Our team drew strength from overcoming personal challenges and aimed to create a meaningful, fun experience that resonates with people on a personal level.
-
----
-
-## 🛠️ How It Works
-
-1. **Take the Questionnaire:** Answer fun, personality-based questions that reflect your unique traits.
-2. **Meet Your Pæmon:** Our AI generates a personalized Pæmon with:
-   - Name, type, and stats
-   - Abilities and backstory
-   - Custom pixel art sprite
-3. **Save and Share:** Take a screenshot of your Pæmon card and share it with your friends!
-
----
-
-## 💻 How We Built It
-
-- **Frontend:** Next.js for a seamless, interactive user experience.
-- **Backend:** OpenAI (GPT-3.5) and Stable Diffusion for AI-powered generation.
-- **Styling:** TailwindCSS for a retro GameBoy-inspired UI.
-- **Music:** Beatoven.ai for custom background tracks.
-- **Deployment:** Hosted on Vercel for reliable performance.
-
----
-
-## 🎯 Challenges We Overcame
-
-- **Remote Collaboration:** Coordinating across time zones required thoughtful planning and asynchronous communication.
-- **AI Integration:** Combining multiple AI technologies (OpenAI, Stable Diffusion, Beatoven.ai) into a cohesive project.
-- **Balancing Nostalgia and Innovation:** Ensuring the project felt retro while incorporating cutting-edge AI.
-
----
-
-**Tracks:**
-- **Best AI Music App (Beatoven.ai):**   
-- **Exploratory Use of LLMs and Vision Models (Nebius):**   
-- **Best Personal Project (CodeBuff):**   
-- **Statsig Grand Prize:** 
-- **Magic Loops - Generative UI/UX Track:**   
-- **Nethenoob Spinning Cat:**   
-- **Beginner Track Winners:**   
-- **Most Technically Impressive (Modal):** 
-
----
-
-## 🚀 Future Plans
-- Adding multiplayer features so Pæmons can interact with each other.
-- Expanding the questionnaire for even more nuanced personalities.
-- Creating a gallery where users can display their Pæmons.
-- Building a mobile app for an on-the-go experience.
-
----
-
-## 💡 How to Run Locally
-
-- 1. Clone the repository: git clone https://github.com/philingus/ProjectPaemon.git
-- 2. Install dependencies: npm install
-- 3. Start the development server: npm run dev
-- 4. Open in your browser at: http://localhost:3000
-
-## 🎉 Ready to discover your Pæmon? Let the adventure begin! 🌟
-
----
+## 🚀 Run Locally
+```bash
+git clone https://github.com/philingus/ProjectPaemon.git
+cd ProjectPaemon
+npm install
+npm run dev
+```
+Open in browser at: [http://localhost:3000](http://localhost:3000)
 
